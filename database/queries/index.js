@@ -4,6 +4,7 @@ import { reviewModel } from "@/models/review-model";
 import { bookingModel } from "@/models/booking-model";
 
 import { isDateInBetween, replaceMongoIdInArray, replaceMongoIdInObject } from "@/utils/data-util";
+import { userModel } from "@/models/user-model";
 
 
 export async function getAllHotels(destination, checkin, checkout,) {
@@ -72,4 +73,10 @@ export async function getRatingsForAHotel(hotelId) {
 export async function getReviewsForAHotel(hotelId) {
     const reviews = await reviewModel.find({ hotelId: hotelId }).lean();
     return replaceMongoIdInArray(reviews);
+}
+
+
+export async function getUserByEmail(email) {
+    const users = await userModel.find({ email: email }).lean();
+    return replaceMongoIdInObject(users[0]);
 }

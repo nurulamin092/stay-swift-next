@@ -1,4 +1,4 @@
-import mongoose, {Schema} from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import { ObjectId } from "mongodb";
 
 const bookingSchema = new Schema({

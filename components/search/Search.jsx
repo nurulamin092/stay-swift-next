@@ -2,6 +2,7 @@
 
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
+
 const Search = ({ fromList, destination, checkin, checkout }) => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -46,6 +47,7 @@ const Search = ({ fromList, destination, checkin, checkout }) => {
       replace(`${pathname}hotels?${params.toString()}`);
     }
   }
+
   return (
     <>
       <div className="lg:max-h-[250px] mt-6">
